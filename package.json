@@ -1,0 +1,12 @@
+{
+  "name": "troll",
+  "version": "1.0.0",
+  "description": "Troll's thing.",
+  "main": "bot.js",
+  "author": "kek",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
+}

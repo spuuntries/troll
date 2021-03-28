@@ -1,0 +1,5 @@
+{
+  "token": "Bot's token",
+  "bind": "Bound user's id",
+  "url": "Webhook's URL (https://discord.com/api/webhooks/...)"
+}
