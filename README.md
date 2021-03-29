@@ -8,14 +8,15 @@ Usage on `Termux`:
 3. open the app
 > optional, but just in case, do this as well: termux-setup-storage 
 4. apt update && apt upgrade 
-5. pkg install git nodejs
-6. npm i -g yarn
-7. cd ~
-8. git clone -b cli https://github.com/spuuntries/troll/
-9. cd troll
-10. yarn
-11. node .
-12. Then just answer the prompts, long press to copy-paste and stuff, btw.  
+5. termux-wake-lock
+6. pkg install git nodejs
+7. npm i -g yarn
+8. cd ~
+9. git clone -b cli https://github.com/spuuntries/troll/
+10. cd troll
+11. yarn
+12. node .
+13. Then just answer the prompts, long press to copy-paste and stuff, btw.  
   
 Usage on windows:
 1. First install node.js and git
