@@ -20,7 +20,7 @@ Usage on `Termux`:
 Usage on windows:
 1. First install node.js and git
 2. Open `explorer`/File Explorer/Windows Explorer and go to where you want this thing to be downloaded
-3. Open `cmd` there (type cmd on the address bar)
+3. Open `cmd` there (type cmd on the address bar and enter)
 4. npm i -g yarn
 5. git clone -b cli https://github.com/spuuntries/troll/
 6. cd troll
