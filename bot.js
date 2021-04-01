@@ -26,6 +26,16 @@ inquirer
       name: "bind",
       message: "What's the bound user's ID?",
     },
+    {
+      type: "confirm",
+      name: "avatar",
+      message: "Do you want the webhook's ava to change?",
+    },
+    {
+      type: "confirm",
+      name: "name",
+      message: "Do you want the webhook's name to change?",
+    },
   ])
   .then((answers) => {
     const config = answers;
@@ -38,20 +48,30 @@ inquirer
       console.log(new Date() + ": Troll's thing is ready!");
     });
 
-    client.on("message", async (message) => {
+    client.on("message", (message) => {
       if (message.author.id == config.bind) {
         client
           .fetchWebhook(ssnce.split("/")[0], ssnce.split("/")[1])
           .then((wb) => {
-            wb.edit({
-              avatar: message.author.displayAvatarURL(),
-            }).then((wb) => {
-              wb.send(message.content).then(() => {
-                if (message.deleted == false) {
-                  message.delete();
-                }
+            if (message.channel.id == wb.channelID) {
+              var def = {
+                name: message.guild.member(message.author).displayName,
+                avatar: message.author.displayAvatarURL(),
+              };
+              if (config.avatar == false) {
+                def.avatar = wb.avatarURL();
+              }
+              if (config.name == false) {
+                def.name = wb.name;
+              }
+              wb.edit(def).then((wb) => {
+                wb.send(message.content).then(() => {
+                  if (message.deleted == false) {
+                    message.delete();
+                  }
+                });
               });
-            });
+            }
           })
           .catch((er) => {
             console.log(new Date() + ": failed to fetch webhuk!", er);
