@@ -44,7 +44,6 @@ inquirer
           .fetchWebhook(ssnce.split("/")[0], ssnce.split("/")[1])
           .then((wb) => {
             wb.edit({
-              name: message.guild.member(message.author).displayName,
               avatar: message.author.displayAvatarURL(),
             }).then((wb) => {
               wb.send(message.content).then(() => {
